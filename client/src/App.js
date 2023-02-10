@@ -2,6 +2,15 @@ import './App.css';
 
 import { useApi } from './hooks/use-api';
 
+function MyButton() {
+  return (
+    <div>Hello world!
+    <button>I'm a button</button>
+    </div>
+  );
+}
+
+
 function App() {
   const { response } = useApi();
 
@@ -11,6 +20,7 @@ function App() {
         <p>
           {response}
         </p>
+        <MyButton />
       </header>
     </div>
   );
