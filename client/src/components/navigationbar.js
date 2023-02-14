@@ -21,4 +21,4 @@ function Navigationbar(){
       </nav>
     );
 }
-export default Navbar;
+export default Navigationbar;
