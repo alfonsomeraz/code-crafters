@@ -4,7 +4,7 @@ import { useApi } from './hooks/use-api';
 
 function MyButton() {
   return (
-    <div>Hello world!
+    <div>Hello!
     <button>I'm a button</button>
     </div>
   );
