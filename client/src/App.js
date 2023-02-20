@@ -1,7 +1,7 @@
 import './App.css';
-// import Navigationbar from './components/navigationbar';
 import NavBar from './components/NavBar';
 import { useApi } from './hooks/use-api';
+import SearchablePatientTable from './components/SearchablePatientTable';
 
 
 function SearchBar() {
@@ -13,66 +13,6 @@ function SearchBar() {
       </form>
     </div>
   )
-}
-
-function PatientRow({ patient }) {
-  const patientData = patient;
-
-  return (
-    <tr>
-      <td>{patientData.patientID}</td>
-      <td>{patientData.examID}</td>
-      <td>{patientData.image}</td>
-      <td>{patientData.keyFinding}</td>
-      <td>{patientData.brixiaScore}</td>
-      <td>{patientData.age}</td>
-      <td>{patientData.sex}</td>
-      <td>{patientData.bmi}</td>
-      <td>{patientData.zipCode}</td>
-    </tr>
-  );
-}
-
-function PatientTable({ patients }) {
-  const rows = [];
-
-  patients.forEach((patient) => {
-    rows.push(
-      <PatientRow
-        patient={patient}
-        key={patient.patientID} />
-    );
-  });
-
-  return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Patient ID</th>
-            <th>Exam ID</th>
-            <th>Image</th>
-            <th>Key Findings</th>
-            <th>Brixia Score</th>
-            <th>Age</th>
-            <th>Sex</th>
-            <th>BMI</th>
-            <th>Zip Code</th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </table>
-    </div>
-  );
-}
-
-function SearchablePatientTable({ patients }) {
-  return (
-    <div>
-      <SearchBar />
-      <PatientTable patients={patients}/>
-    </div>
-  );
 }
 
 // Fake data to work with while building

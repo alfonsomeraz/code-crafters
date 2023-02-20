@@ -5,7 +5,6 @@ nav {
 }
 
 nav .nav-list {
-    color: white;
     display: flex;
     padding-right: 5%;
 }
