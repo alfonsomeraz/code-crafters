@@ -7,7 +7,6 @@ import { useApi } from './hooks/use-api';
 function SearchBar() {
   return (
     <div>
-      <NavBar></NavBar>
       Search:
       <form>
         <input type="text" placeholder="Search..." />
@@ -89,5 +88,10 @@ const PATIENTS = [
 ];
 
 export default function App() {
-  return <SearchablePatientTable patients={PATIENTS} />;
+  return( 
+    <div>
+      <NavBar></NavBar>
+      <SearchablePatientTable patients={PATIENTS} />
+      </div>
+  )
 }
