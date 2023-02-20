@@ -1,12 +1,13 @@
 import './App.css';
 // import Navigationbar from './components/navigationbar';
-
+import NavBar from './components/NavBar';
 import { useApi } from './hooks/use-api';
 
 
 function SearchBar() {
   return (
     <div>
+      <NavBar></NavBar>
       Search:
       <form>
         <input type="text" placeholder="Search..." />
