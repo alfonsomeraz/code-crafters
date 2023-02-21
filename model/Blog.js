@@ -1,21 +1,33 @@
 import mongoose from 'mongoose';
 const { Schema, model } = mongoose;
 
-const blogSchema = new Schema({
-  title: String,
-  slug: String,
-  published: Boolean,
-  author: String,
-  content: String,
-  tags: [String],
-  createdAt: Date,
-  updatedAt: Date,
-  comments: [{
-    user: String,
-    content: String,
-    votes: Number
+const dataEntry = new Schema({
+  success: Boolean,
+  _id: String,
+  patientId: String,
+  age: Number,
+  sex: String,
+  zipCode: String,
+  bmi: Number,
+  __v: Number,
+  examId: String,
+  keyFindings: String,
+  brixiaScores: Number,
+  imageURL: String,
+  exams: [{
+    _id: String,
+    patientId: String,
+    age: Number,
+    sex: String,
+    zipCode: String,
+    bmi: Number,
+    __v: Number,
+    examId: String,
+    keyFindings: String,
+    brixiaScores: Number,
+    imageURL: String
   }]
 });
 
-const Blog = model('Blog', blogSchema);
-export default Blog;
+const Entries = model('Entries', dataEntry);
+export default Entries;
