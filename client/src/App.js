@@ -15,6 +15,10 @@ function SearchBar() {
   )
 }
 
+let temp = () => {
+  return 0;
+};
+
 // Fake data to work with while building
 const PATIENTS = [
   {patientID: "COVID-19-1", examID: "Exam-1", image: "picture", keyFinding: "blah blah",
