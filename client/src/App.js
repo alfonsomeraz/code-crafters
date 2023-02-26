@@ -13,15 +13,8 @@ function SearchBar() {
       </form>
     </div>
   )
+
 }
-
-let temp = () => {
-  return 0;
-};
-
-let dummyfunction = () => {
-
-};
 
 // Fake data to work with while building
 const PATIENTS = [

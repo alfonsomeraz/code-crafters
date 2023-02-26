@@ -31,3 +31,14 @@ nav .logo h1 {
     color: #CAE9FF;
     justify-self: start;
 }
+.nav-button {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+  }

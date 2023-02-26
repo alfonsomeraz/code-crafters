@@ -9,11 +9,10 @@ export default function NavBar(){
             </div>
             <div className="nav-list">
                 <ul>
-                    <li>Exams</li>
-                    <li>Admin</li>
+                    <li><button className="nav-button">Exams</button></li>
+                    <li><button className="nav-button">Admin</button></li>
                 </ul>
             </div>
         </nav>
     )
-
 }

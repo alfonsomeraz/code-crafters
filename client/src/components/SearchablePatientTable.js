@@ -26,7 +26,7 @@ export default function SearchablePatientTable({ patients }) {
 
   const handleSearch = (searchTerm) => {
     const filtered = patients.filter((patient) =>
-      patient.patientID.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      patient.patientID.toLowerCase().includes(searchTerm.toLowerCase()) || 
       patient.examID.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredPatients(filtered);
