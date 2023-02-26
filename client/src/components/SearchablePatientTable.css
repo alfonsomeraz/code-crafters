@@ -1,0 +1,31 @@
+/* SearchablePatientTable.css */
+
+.PatientTableSearch {
+    margin-bottom: 20px;
+  }
+  
+  .PatientTableSearch input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    max-width: 100%;
+  }
+  
+  .PatientTable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .PatientTable th, .PatientTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .PatientTable th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+  }
+  
