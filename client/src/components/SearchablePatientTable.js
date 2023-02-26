@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SearchablePatientTable.css';
 import PatientTable from './PatientTable';
 
-function PatientTableSearch() {
+function SearchBar({ onSearch }) {
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearchChange = (event) => {
+    const value = event.target.value;
+    setSearchTerm(value);
+    onSearch(value);
+  };
+
   return (
     <div>
-      Search: <input type="text" placeholder="Search..." />
+      Search:
+      <form>
+        <input type="text" placeholder="Search..." value={searchTerm} onChange={handleSearchChange} />
+      </form>
     </div>
   );
 }
 
 export default function SearchablePatientTable({ patients }) {
+  const [filteredPatients, setFilteredPatients] = useState(patients);
+
+  const handleSearch = (searchTerm) => {
+    const filtered = patients.filter((patient) =>
+      patient.patientID.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      patient.examID.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredPatients(filtered);
+  };
+
   return (
     <div>
-      <PatientTableSearch />
-      <PatientTable patients={patients} />
+      <SearchBar onSearch={handleSearch} />
+      <PatientTable patients={filteredPatients} />
     </div>
   );
 }
