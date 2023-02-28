@@ -7,13 +7,12 @@ import SearchablePatientTable from './components/SearchablePatientTable';
 function SearchBar() {
   return (
     <div>
-      Search:
-      <form>
-        <input type="text" placeholder="Search..." />
+      <form className="search-bar">
+        <input type="text" placeholder="Search..." className="search-input" />
+        <input type="submit" value="Search" className="search-button" />
       </form>
     </div>
   )
-
 }
 
 // Fake data to work with while building

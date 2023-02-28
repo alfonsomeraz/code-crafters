@@ -13,7 +13,7 @@ function SearchBar({ onSearch }) {
 
   return (
     <div>
-      Search:
+      
       <form>
         <input type="text" placeholder="Search..." value={searchTerm} onChange={handleSearchChange} />
       </form>
