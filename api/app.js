@@ -1,5 +1,11 @@
 var createError = require('http-errors');
-var express = require('express');
+
+// new additions
+const express = require('express');
+require('dotenv').config()
+const mongoose = require('mongoose')
+const examRoutes = require('./routes/exams')
+
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -8,15 +14,38 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+// express app
+const app = express();
+
+// routes
+app.use('/api/exams', examRoutes)
+
+// connect to db
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    // listen for requests
+    app.listen(process.env.PORT, () => {
+      console.log('connected to db & listening on port', process.env.PORT)
+    })
+  })
+  .catch((error) => {
+    console.log(error)
+  })
+
+// middleware
+app.use(express.json())
+app.use((req, res, next) => {
+  console.log(req.path, req.method)
+  next()
+})
 
 app.use(logger('dev'));
 app.use(cors());
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
@@ -37,3 +66,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+process.env
