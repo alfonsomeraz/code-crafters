@@ -35,7 +35,7 @@ export default function App() {
   return( 
     <div>
       <BrowserRouter>
-        <Navbar />
+        <NavBar />
         <div className='pages'>
           <Routes>
             <Route
