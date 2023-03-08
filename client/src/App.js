@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 // pages & components
 import Home from './pages/Home'
-import Navbar from './components/Navbar'
+import NavBar from './components/NavBar'
 import SearchablePatientTable from './components/SearchablePatientTable';
 
 
