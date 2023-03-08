@@ -1,18 +1,25 @@
-import React from 'react'
-import './NavBar.css'
+import './Navbar.css'
+import { Link } from 'react-router-dom'
 
-export default function NavBar(){
+const Navbar = () => {
+
     return (
-        <nav>
-            <div className="logo">
-                <h1>COV-X</h1>
+        <header>
+            <div className="container">
+                <Link to="/">
+                    <h1>COV-X</h1>
+                </Link>
             </div>
-            <div className="nav-list">
-                <ul>
-                    <li><button className="nav-button">Exams</button></li>
-                    <li><button className="nav-button">Admin</button></li>
-                </ul>
-            </div>
-        </nav>
+            <nav>
+                <div className="nav-list">
+                    <ul>
+                        <li><button className="nav-button">Exams</button></li>
+                        <li><button className="nav-button">Admin</button></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
     )
 }
+
+export default Navbar
