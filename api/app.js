@@ -1,7 +1,8 @@
 var createError = require('http-errors');
 
 // new additions
-const express = require('express');
+//const express = require('express');
+var express = require('express');
 require('dotenv').config()
 const mongoose = require('mongoose')
 const examRoutes = require('./routes/exams')
@@ -14,10 +15,12 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 
 // express app
-const app = express();
+//const app = express();
+var app = express();
 
 // routes
-app.use('/api/exams', examRoutes)
+app.use('/api/exams', examRoutes);
+app.use(bodyParser.json());
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
